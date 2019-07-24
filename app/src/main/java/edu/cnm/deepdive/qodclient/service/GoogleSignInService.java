@@ -5,6 +5,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import edu.cnm.deepdive.qodclient.BuildConfig;
 
 public class GoogleSignInService {
 
@@ -17,6 +18,7 @@ public class GoogleSignInService {
     GoogleSignInOptions options = new GoogleSignInOptions.Builder()
         .requestEmail()
         .requestId()
+        .requestIdToken(BuildConfig.CLIENT_ID)
         .requestProfile()
         .build();
     client = GoogleSignIn.getClient(context, options);
